@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AlarmNFC</string>
+    <string name="app_name">NFC Alarm</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="time_picker_button">CREATE ALARM</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
