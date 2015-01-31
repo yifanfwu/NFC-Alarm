@@ -1,6 +1,5 @@
 package com.clv69.alarmnfc;
 
-import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -8,13 +7,8 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.text.format.DateFormat;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -37,6 +31,8 @@ public class TimePickerDialogFragment extends DialogFragment implements TimePick
     private PendingIntent alarmIntent;
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+
         alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(getActivity(), AlarmManagerHelper.class);
         alarmIntent = PendingIntent.getBroadcast(getActivity(), 0, intent, 0);
@@ -44,7 +40,7 @@ public class TimePickerDialogFragment extends DialogFragment implements TimePick
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-        calendar.set(Calendar.MINUTE, minute-1);
+        calendar.set(Calendar.MINUTE, minute);
 
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), alarmIntent);
 

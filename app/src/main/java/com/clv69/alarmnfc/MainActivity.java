@@ -1,19 +1,11 @@
 package com.clv69.alarmnfc;
 
 import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toolbar;
-
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
 
 
 public class MainActivity extends ActionBarActivity {

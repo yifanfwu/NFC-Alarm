@@ -1,7 +1,6 @@
 package com.clv69.alarmnfc;
 
 
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +11,13 @@ public class AlarmManagerHelper extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context, "Don't panik but your time is up!",
-                Toast.LENGTH_LONG).show();
-        // Vibrate the mobile phone
-        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(2000);
+
+        if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED")) {
+            Toast.makeText(context, "Time to get up!",
+                    Toast.LENGTH_LONG).show();
+            // Vibrate the mobile phone
+            Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(2000);
+        }
     }
 }
