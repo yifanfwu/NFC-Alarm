@@ -48,7 +48,11 @@ public class TimePickerDialogFragment extends DialogFragment implements TimePick
 
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), alarmIntent);
 
-        Toast.makeText(getActivity(), "Alarm set for " + hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
+        if (minute == 0) {
+            Toast.makeText(getActivity(), "Alarm set for " + hourOfDay + ":00", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getActivity(), "Alarm set for " + hourOfDay + ":" + minute, Toast.LENGTH_LONG).show();
+        }
 
     }
 }
