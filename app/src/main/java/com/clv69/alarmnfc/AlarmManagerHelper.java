@@ -12,12 +12,14 @@ public class AlarmManagerHelper extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        long pattern[] = new long[] {0, 500, 500, 500, 500};
+
         if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED")) {
             Toast.makeText(context, "Time to get up!",
                     Toast.LENGTH_LONG).show();
-            // Vibrate the mobile phone
+
             Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-            vibrator.vibrate(2000);
+            vibrator.vibrate(pattern, 0);
         }
     }
 }
