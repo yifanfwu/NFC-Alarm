@@ -48,4 +48,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public static final String APP_TAG = "NFC Alarm";
 }
