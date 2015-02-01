@@ -46,7 +46,10 @@ public class TimePickerDialogFragment extends DialogFragment implements TimePick
 
         if (minute == 0) {
             Toast.makeText(getActivity(), "Alarm set for " + hourOfDay + ":00", Toast.LENGTH_LONG).show();
-        } else {
+        } else if (minute < 10) {
+            Toast.makeText(getActivity(), "Alarm set for " + hourOfDay + ":0" + minute, Toast.LENGTH_LONG).show();
+        }
+        else {
             Toast.makeText(getActivity(), "Alarm set for " + hourOfDay + ":" + minute, Toast.LENGTH_LONG).show();
         }
 
